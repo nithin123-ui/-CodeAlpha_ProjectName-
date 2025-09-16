@@ -1,0 +1,44 @@
+PROTFOLIO
+
+stock_prices = {
+    "AAPL": 180,
+    "TSLA": 250,
+    "MSFT": 330,
+    "AMZN": 140
+}
+portfolio = {}
+
+print("Welcome to the Stock Tracker!")
+print("Available stocks and prices:")
+for stock, price in stock_prices.items():
+    print(f"{stock}: ${price}")
+while True:
+    stock = input("\nEnter stock symbol (or 'done' to finish): ").upper()
+    if stock == "DONE":
+        break
+    if stock not in stock_prices:
+        print(" Stock not found in price list. Try again.")
+        continue
+    try:
+        qty = int(input(f"Enter quantity of {stock}: "))
+    except ValueError:
+        print(" Please enter a valid number.")
+        continue
+    portfolio[stock] = portfolio.get(stock, 0) + qty
+
+total_investment = 0
+print("\nYour Portfolio:")
+for stock, qty in portfolio.items():
+    value = qty * stock_prices[stock]
+    total_investment += value
+    print(f"{stock}: {qty} shares × ${stock_prices[stock]} = ${value}")
+print(f"\n Total Investment Value: ${total_investment}")
+save = input("\nDo you want to save the result to a file? (y/n): ").lower()
+if save == "y":
+    filename = input("Enter filename (with .txt or .csv): ")
+    with open(filename, "w") as file:
+        file.write("Stock,Quantity,Price,Total\n")
+        for stock, qty in portfolio.items():
+            file.write(f"{stock},{qty},{stock_prices[stock]},{qty * stock_prices[stock]}\n")
+        file.write(f"\nTotal Investment,,,{total_investment}\n")
+    print(f" Portfolio saved to {filename}")
