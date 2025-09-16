@@ -1,0 +1,7 @@
+end@example.com
+info@sub.domain.co.uk
+john.doe123@gmail.com
+sales@example.org
+support@example.com
+user+tag@domain.com
+weird@domain-with-dash.io

@@ -1,0 +1,6 @@
+Hello team,
+Contact: support@example.com, or sales@example.org.
+John: john.doe123@gmail.com.
+Also: info@sub.domain.co.uk and duplicate support@example.com.
+Edge cases: user+tag@domain.com; weird@domain-with-dash.io.
+Punctuation? yes: end@example.com.
