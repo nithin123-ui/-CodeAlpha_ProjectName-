@@ -1,7 +1,7 @@
 # -CodeAlpha_ProjectName-
  Hangman Game
-import random
 
+import random
 def hangman():
     words = ["python", "apple", "computer", "school", "hangman"]
     word = random.choice(words)
