@@ -1,2 +1,2 @@
 # -CodeAlpha_ProjectName-
-python project 
+ Hangman Game
